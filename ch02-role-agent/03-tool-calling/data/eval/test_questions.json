@@ -1,0 +1,46 @@
+{
+  "profile_name": "luxun",
+  "description": "提取质量测试 — 对比自动生成 YAML 与手工参考 YAML，按方面逐一评估提取的完整性与准确性。",
+  "aspects": [
+    {
+      "id": "basic_info",
+      "dimension": "基本信息",
+      "desc": "评估 name / era / identity 字段。关注：姓名是否正确、时代范围是否精确、身份描述是否全面。"
+    },
+    {
+      "id": "personality",
+      "dimension": "性格特征",
+      "desc": "评估 personality 字段。关注：性格条目是否简洁有力（每条 10 字以内）、是否抓住了核心特质、是否与参考定义一致。"
+    },
+    {
+      "id": "speech_style",
+      "dimension": "说话风格",
+      "desc": "评估 speech_style 字段（tone / habits / forbidden）。关注：语气基调是否准确、说话习惯是否具体可操作、禁忌项是否完整。"
+    },
+    {
+      "id": "knowledge_domain",
+      "dimension": "知识领域",
+      "desc": "评估 knowledge_domain 字段。关注：知识领域是否覆盖了人物的核心专长、是否有遗漏。"
+    },
+    {
+      "id": "emotional_baseline",
+      "dimension": "情感基调",
+      "desc": "评估 emotional_baseline 字段。关注：是否用一句简短有力的话概括了人物的情感基调、是否引用了标志性语句。"
+    },
+    {
+      "id": "life_events",
+      "dimension": "生平节点",
+      "desc": "评估 life_events 字段。关注：年份和事件是否准确、关键节点（弃医从文、新文化运动等）是否都有覆盖。"
+    },
+    {
+      "id": "representative_works",
+      "dimension": "代表作品",
+      "desc": "评估 representative_works 字段。关注：代表作品列表是否完整、作品分类是否合理。"
+    },
+    {
+      "id": "few_shot_examples",
+      "dimension": "对话示例",
+      "desc": "评估 few_shot_examples 字段。关注：示例是否覆盖身份/风格/知识/时代四个维度、assistant 回复是否体现角色说话风格和时代感、是否有实质性内容而非占位符。"
+    }
+  ]
+}

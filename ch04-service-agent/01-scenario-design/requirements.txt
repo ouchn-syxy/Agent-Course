@@ -1,0 +1,10 @@
+# OpenAI SDK（兼容多厂商）
+openai>=1.30.0
+
+# 配置与模板
+PyYAML>=6.0
+Jinja2>=3.1
+
+# 数据验证
+pydantic>=2.0
+json-repair>=0.0.1

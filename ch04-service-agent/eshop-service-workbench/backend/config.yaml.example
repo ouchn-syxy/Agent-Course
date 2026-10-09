@@ -1,0 +1,35 @@
+# ============================================================
+# 网店客服模拟平台 — LLM 配置（参照文件）
+# ============================================================
+# 复制为 config.yaml 并填入你的 API Key 和模型参数
+# config.yaml 不会提交到 Git（已在 .gitignore 中排除）
+
+llm:
+  # 模型提供商（deepseek / qwen / zhipu / openai）
+  provider: "deepseek"
+
+  # API 地址（OpenAI SDK 兼容格式）
+  # DeepSeek: https://api.deepseek.com
+  # Qwen:     https://dashscope.aliyuncs.com/compatible-mode/v1
+  # 智谱:     https://open.bigmodel.cn/api/paas/v4
+  # OpenAI:   https://api.openai.com/v1
+  base_url: "https://api.deepseek.com"
+
+  # 模型名称
+  # DeepSeek: deepseek-v4-flash
+  # Qwen:     qwen-turbo / qwen-plus / qwen-max
+  # 智谱:     glm-4-flash / glm-4
+  # OpenAI:   gpt-4o / gpt-4o-mini
+  model: "deepseek-v4-flash"
+
+  # API Key（直接在此填写你的密钥）
+  api_key: "sk-..."
+
+  # 温度（0.0-2.0）：越高越随机
+  temperature: 0.9
+
+  # Top-P 核采样（0.0-1.0）
+  top_p: 0.95
+
+  # 最大输出 Token 数
+  max_tokens: 1024

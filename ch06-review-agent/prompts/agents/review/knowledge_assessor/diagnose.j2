@@ -1,0 +1,29 @@
+# 考试信息
+考试名称：{{ exam_name }}
+总共需要复习的知识点：
+
+{% for kp in knowledge_points %}
+## {{ kp.id }} — {{ kp.name }}
+- 分类：{{ kp.category }}
+- 重要性：{{ kp.importance }}
+- 核心概念：{{ kp.key_concepts | join("、") }}
+{% endfor %}
+
+# 诊断上下文
+{% if active_updates %}
+## 当前已确认的知识点状态
+{% for u in active_updates %}
+- {{ u.name }}：掌握度 {{ u.mastery }}，置信度 {{ u.confidence }}（依据：{{ u.evidence }}）
+{% endfor %}
+{% else %}
+## 尚未收集任何信息，请开始第一轮提问。
+{% endif %}
+
+{% if history %}
+# 对话上下文
+{% for msg in history %}
+{{ msg.role }}：{{ msg.content }}
+{%- endfor %}
+{% else %}
+尚无对话上下文，请发起第一轮提问。
+{% endif %}

@@ -1,0 +1,23 @@
+# 题目信息
+**题目**：
+{{ question_info.question }}
+
+**参考答案**：
+{{ question_info.reference_answer }}
+
+{% if question_info.key_points %}
+**关键要点**（参考答案必须涵盖的内容）：
+{% for point in question_info.key_points %}
+- {{ point }}
+{% endfor %}
+{% endif %}
+
+**评分标准**：
+- 正确性得分（满分 {{ question_info.grading_criteria.correctness.max_score }}）：{{ question_info.grading_criteria.correctness.description }}
+- 完整性得分（满分 {{ question_info.grading_criteria.completeness.max_score }}）：{{ question_info.grading_criteria.completeness.description }}
+- 清晰度得分（满分 {{ question_info.grading_criteria.clarity.max_score }}）：{{ question_info.grading_criteria.clarity.description }}
+
+# 学生答案
+{{ user_answer }}
+
+请按照评分标准批改以上学生答案，输出 JSON 格式的批改结果。

@@ -1,0 +1,19 @@
+id: rust_popularity
+type: tech_blog
+topic: 为什么 Rust 越来越受欢迎
+
+requirements:
+  target_audience: 有一定编程经验的开发者
+  writing_goal: 解释 Rust 受欢迎的原因，并给出学习建议
+  word_count: 2000-3000
+  tone: 专业、清晰、有案例
+  must_include:
+    - 内存安全
+    - 性能表现
+    - 工程实践
+    - 与 C++/Go 的对比
+    - 学习建议
+  avoid:
+    - 空泛宣传
+    - 未核实的数据
+    - 过度夸大语言优势

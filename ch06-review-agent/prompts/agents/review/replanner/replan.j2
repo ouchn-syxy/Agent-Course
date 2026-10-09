@@ -1,0 +1,34 @@
+# 当前状态
+第 {{ current_day }} 天 / 共 {{ total_days }} 天
+
+## 最新反思结果
+- 整体有效性：{{ reflection.overall_effectiveness }}
+- 任务完成率：{{ reflection.task_completion_rate }}
+- 洞见：{{ reflection.insights }}
+- 问题：{{ reflection.issues | join("；") }}
+- 建议：{{ reflection.suggestions | join("；") }}
+
+## 已执行天数总结
+{% for plan in completed_plans %}
+### 第 {{ plan.day }} 天
+{% for task in plan.tasks %}
+- {{ task.id }}（{{ task.knowledge_point_id }}）：{{ task.status }}，得分 {{ task.result.quiz_score or "N/A" }}
+{% endfor %}
+{% endfor %}
+
+## 当前知识点掌握度
+{% for kp in knowledge_points %}
+- {{ kp.name }}：mastery={{ "%.2f" | format(kp.mastery) }}，confidence={{ "%.2f" | format(kp.confidence) }}
+{% endfor %}
+
+## 待修改的未来计划
+（以下是未来未执行的天数，day {{ current_day + 1 }} ~ day {{ total_days }}）
+
+{% for plan in future_plans %}
+### 第 {{ plan.day }} 天（{{ plan.available_minutes }} 分钟）
+{% for task in plan.tasks %}
+- {{ task.id }}：{{ task.description }}（{{ task.task_type }}，{{ task.knowledge_point_id }}，{{ task.estimated_minutes }} 分钟）
+{% endfor %}
+{% endfor %}
+
+请根据反思结果调整以上未来计划。

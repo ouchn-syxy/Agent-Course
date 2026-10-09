@@ -1,0 +1,59 @@
+# 任务信息
+
+**主题**: {{ topic }}
+**核心论点**: {{ core_message.thesis }}
+**独特角度**: {{ core_message.angle }}
+{% if core_message.takeaways %}
+**读者应获得的关键收获**:
+{% for item in core_message.takeaways %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+
+## 目标读者分析
+
+**读者画像**: {{ audience_analysis.profile }}
+{% if audience_analysis.needs %}
+**核心需求**:
+{% for item in audience_analysis.needs %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+{% if audience_analysis.pain_points %}
+**痛点/困惑**:
+{% for item in audience_analysis.pain_points %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+
+{% if writer_notes %}
+**核查线索**: {{ writer_notes }}
+{% endif %}
+
+## 文章大纲
+
+{% for section in outline %}
+### {{ section.title }}
+
+**写作目标**: {{ section.objective }}
+{% if section.key_points %}
+**要点**:
+{% for point in section.key_points %}
+- {{ point }}
+{% endfor %}
+{% endif %}
+{% if section.notes %}
+**特别说明**: {{ section.notes }}
+{% endif %}
+
+{% endfor %}
+
+## 待核查内容
+
+```markdown
+{{ content }}
+```
+
+---
+
+请仔细核查上述内容的事实准确性，并严格按照要求的 JSON 结构输出核查报告。

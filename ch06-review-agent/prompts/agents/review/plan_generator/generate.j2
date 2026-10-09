@@ -1,0 +1,25 @@
+# 考试信息
+考试名称：{{ exam_name }}
+总复习天数：{{ total_days }}
+
+# 当前要规划的一天
+今天是第 {{ current_day }} 天，可用时间 {{ available_minutes }} 分钟。
+
+# 知识点掌握情况（按优先级从高到低排序）
+{% for kp in knowledge_points %}
+## {{ kp.id }} — {{ kp.name }}
+- 分类：{{ kp.category }}
+- 重要性：{{ kp.importance }}
+- 掌握度：{{ kp.mastery }}
+- 置信度：{{ kp.confidence }}
+- 优先级指数：{{ "%.4f" | format(kp.priority) }}
+- 核心概念：{{ kp.key_concepts | join("、") }}
+{% endfor %}
+
+# 前 {{ current_day - 1 }} 天已规划内容
+{{ previous_days_summary }}
+
+请为第 {{ current_day }} 天生成当日的复习任务列表，确保：
+- 任务总预估时长不超过 {{ available_minutes }} 分钟
+- 与前几天内容有衔接，温故知新
+- 薄弱知识点（mastery < 0.4）多安排 practice，已掌握（mastery > 0.85）以 review 为主

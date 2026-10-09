@@ -1,0 +1,15 @@
+{{ requirements }}
+
+{% if preferences %}
+## 用户偏好
+{% for pref in preferences %}
+- {{ pref.tag }}：{{ pref.value }}
+{%- endfor %}
+
+{% endif -%}
+{% if history_messages %}
+# 历史对话
+{% for msg in history_messages %}
+[{% if msg.role == "user" %}用户{% else %}助手{% endif %}]: {{ (msg.content|string)[:300] }}
+{%- endfor %}
+{% endif -%}

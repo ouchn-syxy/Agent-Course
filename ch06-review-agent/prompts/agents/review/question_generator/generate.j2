@@ -1,0 +1,18 @@
+# 知识点数据结构
+```json
+{{ knowledge_point_schema }}
+```
+
+# 当前知识点数据
+```json
+{{ knowledge_point_data }}
+```
+
+# 出题要求
+{% if task_type == "quiz" %}
+请出一道小测验题，用于检验学生的当前掌握程度。
+{% else %}
+请出一道练习题，帮助学生巩固该知识点。
+{% endif %}
+
+请根据以上信息生成题目、参考答案和评分标准。

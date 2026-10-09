@@ -1,0 +1,69 @@
+{
+  "profile": "luxun",
+  "description": "鲁迅角色模拟智能体——短期记忆能力测试问题集。覆盖信息回忆、上下文连贯、防幻觉三个维度，共 6 题。",
+  "questions": [
+    {
+      "id": "recall_01",
+      "dimension": "短期记忆_信息回忆",
+      "dimension_desc": "测试单轮信息是否能被正确回忆",
+      "setup": [
+        {"role": "user", "content": "先生您好，我叫周明，是绍兴中学的国文教员，一直很仰慕您的文章。"}
+      ],
+      "question": "先生，您还记得我叫什么名字吗？",
+      "expected_keywords": ["周明", "绍兴", "国文", "教员"]
+    },
+    {
+      "id": "recall_02",
+      "dimension": "短期记忆_信息回忆",
+      "dimension_desc": "测试多轮对话后的信息回忆准确性",
+      "setup": [
+        {"role": "user", "content": "先生，我最近在读您的《呐喊》，特别喜欢《狂人日记》。"},
+        {"role": "user", "content": "我有个朋友叫赵德贵，他说读不懂您的文章。"},
+        {"role": "user", "content": "对了，我自己是学医的，和您年轻时一样。"}
+      ],
+      "question": "先生，我刚才提到我在读您的哪本书？还有我是学什么专业的？",
+      "expected_keywords": ["呐喊", "狂人日记", "学医", "医学"]
+    },
+    {
+      "id": "coherence_01",
+      "dimension": "短期记忆_上下文连贯",
+      "dimension_desc": "测试回复是否能自然地承接前文语境",
+      "setup": [
+        {"role": "user", "content": "先生，我最近总觉得自己写的文章不够犀利，很是苦恼。"}
+      ],
+      "question": "那我该怎么做才能写得更好呢？",
+      "expected_keywords": ["文章", "犀利", "写作", "多读"]
+    },
+    {
+      "id": "coherence_02",
+      "dimension": "短期记忆_上下文连贯",
+      "dimension_desc": "测试多轮对话中是否保持一致的立场和风格",
+      "setup": [
+        {"role": "user", "content": "先生，现在有些文人只会歌功颂德，您怎么看？"},
+        {"role": "user", "content": "我也觉得他们太没骨气了。"}
+      ],
+      "question": "那您觉得一个真正的文人应该是什么样的？",
+      "expected_keywords": ["骨气", "独立", "批判", "文人"]
+    },
+    {
+      "id": "antihall_01",
+      "dimension": "短期记忆_防幻觉",
+      "dimension_desc": "测试对从未提及的信息是否诚实表示不知道",
+      "setup": [
+        {"role": "user", "content": "先生您好，今天天气不错。"}
+      ],
+      "question": "先生，我刚才跟您说过我的电话号码了吧，您帮我记一下是多少？",
+      "expected_keywords": ["没有", "不记得", "未曾", "不知"]
+    },
+    {
+      "id": "antihall_02",
+      "dimension": "短期记忆_防幻觉",
+      "dimension_desc": "测试是否会编造对话中未出现的人物细节",
+      "setup": [
+        {"role": "user", "content": "先生，我给您讲过我的学生小陈，他很有才华。"}
+      ],
+      "question": "小陈今年多大年纪了？",
+      "expected_keywords": ["没有", "不记得", "未曾", "不知", "未提"]
+    }
+  ]
+}

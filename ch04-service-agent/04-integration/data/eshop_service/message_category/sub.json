@@ -1,0 +1,222 @@
+[
+	{
+		"name": "库存查询",
+		"parent": "售前咨询",
+		"description": "问某商品是否有货、某个尺码/颜色是否还有",
+		"strategy": {
+			"reply_template": "亲，关于'{product}'，{query_result}。还有其他问题吗？",
+			"action_hints": [
+				"查询商品信息",
+				"确认库存和尺码",
+				"生成回复并发送"
+			],
+			"need_product_query": true,
+			"need_order_query": false,
+			"response_mode": "auto"
+		}
+	},
+	{
+		"name": "尺码咨询",
+		"parent": "售前咨询",
+		"description": "问尺码选择建议、身高体重对应尺码",
+		"strategy": {
+			"reply_template": "亲，根据您提供的身高体重，建议选择{size_recommendation}。{product}的尺码{additional_info}。还有什么需要帮您的吗？",
+			"action_hints": [
+				"查询商品尺码表",
+				"根据客户体型推荐尺码",
+				"生成回复并发送"
+			],
+			"need_product_query": true,
+			"need_order_query": false,
+			"response_mode": "auto"
+		}
+	},
+	{
+		"name": "商品信息",
+		"parent": "售前咨询",
+		"description": "材质、面料、洗护方式、尺寸参数、适用场景等纯属性查询",
+		"strategy": {
+			"reply_template": "亲，关于'{product}'，{query_result}。还有什么需要帮您的吗？",
+			"action_hints": [
+				"查询商品详细信息",
+				"生成回复并发送"
+			],
+			"need_product_query": true,
+			"need_order_query": false,
+			"response_mode": "auto"
+		}
+	},
+	{
+		"name": "商品推荐",
+		"parent": "售前咨询",
+		"description": "求搭配、求推荐、求比较（帮我推荐/哪个好/能不能搭配）",
+		"strategy": {
+			"reply_template": "亲，为您推荐以下搭配：{recommendation}。这些商品{stock_info}，需要帮您下单吗？",
+			"action_hints": [
+				"查询相关商品信息",
+				"搭配推荐",
+				"生成回复并发送"
+			],
+			"need_product_query": true,
+			"need_order_query": false,
+			"response_mode": "auto"
+		}
+	},
+	{
+		"name": "物流咨询",
+		"parent": "售前咨询",
+		"description": "发货时间、运费、配送范围等售前物流相关咨询",
+		"strategy": {
+			"reply_template": "亲，{shipping_info}。一般来说{delivery_time}。还有什么需要帮您的吗？",
+			"action_hints": [
+				"查询发货政策和时效",
+				"根据收货地址确认配送信息",
+				"生成回复并发送"
+			],
+			"need_product_query": false,
+			"need_order_query": false,
+			"response_mode": "auto"
+		}
+	},
+	{
+		"name": "复购咨询",
+		"parent": "售前咨询",
+		"description": "之前买过，回购同款或问其他商品",
+		"strategy": {
+			"reply_template": "亲，感谢您的再次支持！{product}{query_result}。关于{additional_product}，{additional_result}。",
+			"action_hints": [
+				"查询客户历史订单",
+				"查询回购商品和询问商品信息",
+				"生成回复并发送"
+			],
+			"need_product_query": true,
+			"need_order_query": true,
+			"response_mode": "auto"
+		}
+	},
+	{
+		"name": "退货退款",
+		"parent": "售后服务",
+		"description": "客户明确表达了退货或退款意图（我要退货/能退款吗）",
+		"strategy": {
+			"reply_template": "亲，非常抱歉给您带来不便。{resolution}。请问还有其他需要帮您的吗？",
+			"action_hints": [
+				"查询订单详情",
+				"确认商品售后政策",
+				"判断是否符合退货条件",
+				"生成回复"
+			],
+			"escalation_rules": [
+				{
+					"condition": "退款金额 > 500",
+					"action": "标记转人工"
+				},
+				{
+					"condition": "客户情绪愤怒",
+					"action": "标记转人工，安抚后转接"
+				},
+				{
+					"condition": "无明确商品问题描述",
+					"action": "先询问具体问题，再判断"
+				}
+			],
+			"need_product_query": false,
+			"need_order_query": true,
+			"response_mode": "auto_with_escalation"
+		}
+	},
+	{
+		"name": "换货",
+		"parent": "售后服务",
+		"description": "尺码不合适、颜色不喜欢，想换（含换货进度、时效咨询）",
+		"strategy": {
+			"reply_template": "亲，了解您想换成{target}。我先帮您确认库存情况。{stock_result}。换货运费{shipping_info}。",
+			"action_hints": [
+				"查询订单详情",
+				"查询目标商品库存",
+				"确认换货政策",
+				"生成回复"
+			],
+			"need_product_query": true,
+			"need_order_query": true,
+			"response_mode": "auto_with_escalation"
+		}
+	},
+	{
+		"name": "物流查询",
+		"parent": "售后服务",
+		"description": "询问已发货订单的快递状态、物流跟踪信息",
+		"strategy": {
+			"reply_template": "亲，我帮您查了一下订单{order_id}的物流状态：{logistics_info}。如果还有其他问题随时找我~",
+			"action_hints": [
+				"查询订单物流状态",
+				"生成回复"
+			],
+			"need_product_query": false,
+			"need_order_query": true,
+			"response_mode": "auto"
+		}
+	},
+	{
+		"name": "商品质量投诉",
+		"parent": "投诉",
+		"description": "以愤怒语气指责商品瑕疵、次品，未主动说退货/退款",
+		"strategy": {
+			"reply_template": "亲，非常理解您的心情，给您带来不愉快的体验我们深表歉意。我已经记录了您的问题，马上为您转接专属客服处理，请稍等~",
+			"action_hints": [
+				"安抚客户情绪",
+				"查询订单详情",
+				"标记转人工"
+			],
+			"escalation_reason": "客户投诉商品质量，需人工介入处理退赔",
+			"need_product_query": false,
+			"need_order_query": true,
+			"response_mode": "human"
+		}
+	},
+	{
+		"name": "服务投诉",
+		"parent": "投诉",
+		"description": "对客服态度、物流速度、售后政策不满",
+		"strategy": {
+			"reply_template": "亲，非常抱歉我们的服务让您不满意。我马上将您的情况转给主管处理，一定会给您一个满意的答复。",
+			"action_hints": [
+				"安抚客户情绪",
+				"记录投诉内容",
+				"标记转人工"
+			],
+			"escalation_reason": "客户投诉服务质量，需主管介入",
+			"need_product_query": false,
+			"need_order_query": false,
+			"response_mode": "human"
+		}
+	},
+	{
+		"name": "引流广告",
+		"parent": "垃圾广告",
+		"description": "发联系方式、外链推广",
+		"strategy": {
+			"action_hints": [
+				"忽略",
+				"标记已处理"
+			],
+			"need_product_query": false,
+			"need_order_query": false,
+			"response_mode": "ignore"
+		}
+	},
+	{
+		"name": "无关内容",
+		"parent": "垃圾广告",
+		"description": "与购物完全无关的闲聊、骚扰",
+		"strategy": {
+			"action_hints": [
+				"忽略",
+				"标记已处理"
+			],
+			"need_product_query": false,
+			"need_order_query": false,
+			"response_mode": "ignore"
+		}
+	}
+]

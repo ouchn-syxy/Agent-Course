@@ -1,0 +1,30 @@
+# 今日学习概况
+第 {{ current_day }} 天 / 共 {{ total_days }} 天
+
+## 今日任务执行情况
+{% for task in today_tasks %}
+### {{ task.id }}：{{ task.description }}
+- 类型：{{ task.task_type }}
+- 知识点：{{ task_kp_names[task.knowledge_point_id] }}
+- 状态：{{ task.status }}
+- 预估/实际耗时：{{ task.estimated_minutes }}/{{ task.actual_minutes or "未记录" }} 分钟
+{% if task.result %}
+  {% if task.result.quiz_score is not none %}
+  - 测验得分：{{ "%.1f" | format(task.result.quiz_score * 10) }}/10
+  {% endif %}
+  - 自评：{{ task.result.self_assessment }}
+  - 完成度：{{ task.result.completion_level }}
+{% endif %}
+{% endfor %}
+
+## 今日涉及的知识点掌握度变化
+{% for kp in affected_kps %}
+- {{ kp.name }}：掌握度 {{ "%.2f" | format(kp.old_mastery) }} → {{ "%.2f" | format(kp.mastery) }}，置信度 {{ "%.2f" | format(kp.old_confidence) }} → {{ "%.2f" | format(kp.confidence) }}
+{% endfor %}
+
+## 后续计划概要
+{% for plan in future_plans[:3] %}
+第 {{ plan.day }} 天：共 {{ plan.tasks | length }} 个任务（{{ plan.available_minutes }} 分钟）
+{% endfor %}
+
+请根据以上信息进行今日学习反思和分析。

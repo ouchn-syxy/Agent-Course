@@ -1,0 +1,354 @@
+[
+	{
+		"id": "msg_001",
+		"label": {
+			"parent": "售前咨询",
+			"name": "库存查询",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_001",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "这个红色的还有M码吗？"
+			}
+		]
+	},
+	{
+		"id": "msg_002",
+		"label": {
+			"parent": "售前咨询",
+			"name": "尺码咨询",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_001",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "我身高165体重55，这个衬衫选什么码比较好？"
+			}
+		]
+	},
+	{
+		"id": "msg_003",
+		"label": {
+			"parent": "售前咨询",
+			"name": "商品推荐",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_004",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "想买件衬衫和裤子，能帮忙搭配一下吗？我上班穿的"
+			}
+		]
+	},
+	{
+		"id": "msg_004",
+		"label": {
+			"parent": "售前咨询",
+			"name": "复购咨询",
+			"sentiment": "正面",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_007",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "上次买的T恤穿得很舒服，想再买两件白色的。对了你们那个手提包还有货吗？"
+			}
+		]
+	},
+	{
+		"id": "msg_005",
+		"label": {
+			"parent": "售前咨询",
+			"name": "库存查询",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_004",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "这款牛仔裤有蓝色的吗？我想看看上身效果"
+			}
+		]
+	},
+	{
+		"id": "msg_006",
+		"label": {
+			"parent": "售后服务",
+			"name": "退货退款",
+			"sentiment": "负面",
+			"urgency": "紧急"
+		},
+		"source_customer": "cust_002",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "鞋子穿了三天鞋底就开胶了，这也太差了吧，我要退货！"
+			}
+		]
+	},
+	{
+		"id": "msg_007",
+		"label": {
+			"parent": "售后服务",
+			"name": "换货",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_005",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "我买的白色衬衫XL码太大了，想换成L码，怎么换？"
+			}
+		]
+	},
+	{
+		"id": "msg_008",
+		"label": {
+			"parent": "售后服务",
+			"name": "物流查询",
+			"sentiment": "负面",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_008",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "我的快递三天没更新了，到底什么时候能到？"
+			}
+		]
+	},
+	{
+		"id": "msg_009",
+		"label": {
+			"parent": "投诉",
+			"name": "商品质量投诉",
+			"sentiment": "愤怒",
+			"urgency": "紧急"
+		},
+		"source_customer": "cust_002",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "收到货发现拉链是坏的，这种质量也敢卖？"
+			}
+		]
+	},
+	{
+		"id": "msg_010",
+		"label": {
+			"parent": "投诉",
+			"name": "商品质量投诉",
+			"sentiment": "愤怒",
+			"urgency": "紧急"
+		},
+		"source_customer": "cust_003",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "我买的羽绒服收到就发现有污渍，还钻绒！这是次品吧？你们店太坑人了！"
+			}
+		]
+	},
+	{
+		"id": "msg_011",
+		"label": {
+			"parent": "投诉",
+			"name": "服务投诉",
+			"sentiment": "愤怒",
+			"urgency": "紧急"
+		},
+		"source_customer": "cust_003",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "等了半个月才发货，客服态度还这么差，我要投诉你们！"
+			}
+		]
+	},
+	{
+		"id": "msg_012",
+		"label": {
+			"parent": "垃圾广告",
+			"name": "引流广告",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_006",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "加我微信 xxxxx123，我们这边有内部优惠价"
+			}
+		]
+	},
+	{
+		"id": "msg_013",
+		"label": {
+			"parent": "垃圾广告",
+			"name": "无关内容",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_006",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "今天天气真好"
+			}
+		]
+	},
+	{
+		"id": "msg_014",
+		"label": {
+			"parent": "售前咨询",
+			"name": "商品信息",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_001",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "这个真丝睡衣能机洗吗？会不会缩水？"
+			}
+		]
+	},
+	{
+		"id": "msg_015",
+		"label": {
+			"parent": "售前咨询",
+			"name": "物流咨询",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_004",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "你们店发货一般要多久？我在北京"
+			}
+		]
+	},
+	{
+		"id": "msg_016",
+		"label": {
+			"parent": "售后服务",
+			"name": "退货退款",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_002",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "退货的话运费谁出？你们有运费险吗？"
+			}
+		]
+	},
+	{
+		"id": "msg_017",
+		"label": {
+			"parent": "投诉",
+			"name": "商品质量投诉",
+			"sentiment": "负面",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_005",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "颜色和图片差太多了吧，实物暗了好多"
+			}
+		]
+	},
+	{
+		"id": "msg_018",
+		"label": {
+			"parent": "售后服务",
+			"name": "换货",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_005",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "换货大概几天能收到新商品？"
+			}
+		]
+	},
+	{
+		"id": "msg_019",
+		"label": {
+			"parent": "售后服务",
+			"name": "退货退款",
+			"sentiment": "愤怒",
+			"urgency": "紧急"
+		},
+		"source_customer": "cust_003",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "质量太差了！穿了一次就起球，我要退款还要赔偿！"
+			}
+		]
+	},
+	{
+		"id": "msg_020",
+		"label": {
+			"parent": "垃圾广告",
+			"name": "引流广告",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_006",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "关注公众号 XX折扣 领取大额优惠券"
+			}
+		]
+	},
+	{
+		"id": "msg_021",
+		"label": {
+			"parent": "售后服务",
+			"name": "物流查询",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_008",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "我的订单号20230701-0001，帮我看看发到哪了"
+			}
+		]
+	},
+	{
+		"id": "msg_022",
+		"label": {
+			"parent": "售前咨询",
+			"name": "商品信息",
+			"sentiment": "中性",
+			"urgency": "普通"
+		},
+		"source_customer": "cust_004",
+		"conversation": [
+			{
+				"role": "customer",
+				"content": "这款皮带是什么材质的？适合送人吗？"
+			}
+		]
+	}
+]

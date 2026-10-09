@@ -1,0 +1,80 @@
+# 任务信息
+
+**主题**: {{ topic }}
+**核心论点**: {{ core_message.thesis }}
+**独特角度**: {{ core_message.angle }}
+{% if core_message.takeaways %}
+**读者应获得的关键收获**:
+{% for item in core_message.takeaways %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+{% if word_count %}
+**字数要求**: {{ word_count }}
+{% endif %}
+{% if tone %}
+**语气风格**: {{ tone }}
+{% endif %}
+
+## 目标读者分析
+
+**读者画像**: {{ audience_analysis.profile }}
+{% if audience_analysis.needs %}
+**核心需求**:
+{% for item in audience_analysis.needs %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+{% if audience_analysis.pain_points %}
+**痛点/困惑**:
+{% for item in audience_analysis.pain_points %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+
+## 文章大纲
+
+请严格按照以下大纲撰写：
+
+{% for section in outline %}
+### {{ section.title }}
+
+**写作目标**: {{ section.objective }}
+{% if section.key_points %}
+**要点**:
+{% for point in section.key_points %}
+- {{ point }}
+{% endfor %}
+{% endif %}
+{% if section.notes %}
+**特别说明**: {{ section.notes }}
+{% endif %}
+
+{% endfor %}
+
+## 写作指导
+
+{% if writing_guidelines.dos %}
+**应该做的事**:
+{% for item in writing_guidelines.dos %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+
+{% if writing_guidelines.donts %}
+**应该避免的事**:
+{% for item in writing_guidelines.donts %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+{% if writing_guidelines.examples %}
+
+**建议示例方向**:
+{% for item in writing_guidelines.examples %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+
+---
+
+请根据上述信息完成文章初稿，并严格按照要求的 JSON 结构输出结果。

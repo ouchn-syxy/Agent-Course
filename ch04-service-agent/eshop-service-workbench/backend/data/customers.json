@@ -1,0 +1,136 @@
+[
+  {
+    "id": "cust_001",
+    "name": "张三",
+    "avatar": "👩",
+    "level": "VIP会员",
+    "orders": [
+      {
+        "order_id": "20230701-0001",
+        "date": "2026-07-01",
+        "status": "已签收",
+        "items": [
+          {"product_id": "P001", "product_name": "红色连衣裙", "price": 299.00, "quantity": 1, "size": "M", "color": "红色"}
+        ],
+        "total": 299.00
+      }
+    ],
+    "persona": "售前咨询型客户，正在浏览商品，对库存和尺码有疑问，语气友善",
+    "initial_message": "你好，我看中了你家那条红色连衣裙，M码红色的还有货吗？另外我想问一下，我身高160体重55，这个码数合适吗？"
+  },
+  {
+    "id": "cust_002",
+    "name": "李四",
+    "avatar": "👨",
+    "level": "普通会员",
+    "orders": [
+      {
+        "order_id": "20230615-0002",
+        "date": "2026-06-15",
+        "status": "已签收",
+        "items": [
+          {"product_id": "P005", "product_name": "运动跑鞋", "price": 459.00, "quantity": 1, "size": "38", "color": "白/粉"}
+        ],
+        "total": 459.00
+      }
+    ],
+    "persona": "售后型客户，买的跑鞋开胶了要退货，语气有些不满但还算克制",
+    "initial_message": "我上个月买了一双运动跑鞋，穿了不到一个月鞋底就开胶了，这也太离谱了吧？我要退货！你们这个质量也太差了。"
+  },
+  {
+    "id": "cust_003",
+    "name": "王五",
+    "avatar": "👩‍🦰",
+    "level": "VIP会员",
+    "orders": [
+      {
+        "order_id": "20230705-0003",
+        "date": "2026-07-05",
+        "status": "已签收",
+        "items": [
+          {"product_id": "P010", "product_name": "羽绒服", "price": 899.00, "quantity": 1, "size": "L", "color": "米白"}
+        ],
+        "total": 899.00
+      }
+    ],
+    "persona": "愤怒的投诉客户，收到的羽绒服有污渍且钻绒严重，要求赔偿，情绪激动",
+    "initial_message": "你们太过分了！！我花899买的羽绒服，收到一看袖口有污渍不说，穿了三天就开始钻绒！！满身都是毛毛！！这就是你们的质量？我要投诉！必须给我一个说法！！"
+  },
+  {
+    "id": "cust_004",
+    "name": "赵六",
+    "avatar": "👩‍💼",
+    "level": "新用户",
+    "orders": [],
+    "persona": "新用户，对多款商品感兴趣，正在比较选购，问题较多",
+    "initial_message": "你好，我想买几件上班穿的衣服。你们那个白衬衫和黑色休闲裤搭配起来好看吗？我平时穿L码，这两款L码有货吗？还有你们家有没有优惠活动啊？"
+  },
+  {
+    "id": "cust_005",
+    "name": "钱七",
+    "avatar": "👨‍💼",
+    "level": "普通会员",
+    "orders": [
+      {
+        "order_id": "20260720-0005",
+        "date": "2026-07-20",
+        "status": "已签收",
+        "items": [
+          {"product_id": "P001", "product_name": "红色连衣裙", "price": 299.00, "quantity": 1, "size": "M", "color": "红色"}
+        ],
+        "total": 299.00
+      }
+    ],
+    "persona": "换货客户，红色连衣裙M码偏小，想换成黑色L码，衣服未洗且吊牌包装完整，语气客气",
+    "initial_message": "这件衣服尺码小了，想换成黑色 L 码，可以吗？衣服没有洗过，吊牌和包装都还在。"
+  },
+  {
+    "id": "cust_006",
+    "name": "孙八",
+    "avatar": "🤖",
+    "level": "新用户",
+    "orders": [],
+    "persona": "垃圾消息发送者，发送广告和可疑链接",
+    "initial_message": "加我微信 xxx6688，全网最低价名牌包包，保证正品支持专柜验货！限量特价今天最后一天！"
+  },
+  {
+    "id": "cust_007",
+    "name": "周九",
+    "avatar": "👩",
+    "level": "VIP会员",
+    "orders": [
+      {
+        "order_id": "20260601-0006",
+        "date": "2026-06-01",
+        "status": "已签收",
+        "items": [
+          {"product_id": "P009", "product_name": "纯棉T恤", "price": 99.00, "quantity": 2, "size": "M", "color": "白色"},
+          {"product_id": "P009", "product_name": "纯棉T恤", "price": 99.00, "quantity": 1, "size": "M", "color": "黑色"}
+        ],
+        "total": 297.00
+      }
+    ],
+    "persona": "售前咨询型客户，想复购T恤并询问新颜色，语气热情",
+    "initial_message": "上次买的纯棉T恤特别好穿！我想再买几件，这次军绿色的M码有吗？还想顺便看看你们那个皮质手提包，能帮我介绍一下吗？"
+  },
+  {
+    "id": "cust_008",
+    "name": "吴十",
+    "avatar": "👨",
+    "level": "普通会员",
+    "orders": [
+      {
+        "order_id": "20260710-0008",
+        "date": "2026-07-10",
+        "status": "运输中",
+        "items": [
+          {"product_id": "P012", "product_name": "牛皮皮带", "price": 239.00, "quantity": 1, "size": "115cm", "color": "黑色"},
+          {"product_id": "P006", "product_name": "羊绒围巾", "price": 189.00, "quantity": 1, "size": "均码", "color": "驼色"}
+        ],
+        "total": 428.00
+      }
+    ],
+    "persona": "物流查询客户，订单超过预计时间未到货，有些着急",
+    "initial_message": "你好，我的订单号20260710-0008，已经5天了怎么还没到啊？物流信息一直不更新，能不能帮我查一下？我急用的，这周末就要送人了。"
+  }
+]

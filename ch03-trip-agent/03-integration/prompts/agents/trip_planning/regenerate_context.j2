@@ -1,0 +1,36 @@
+{{ plan_domain_context }}
+
+## ⚠️ 上一版方案存在以下问题，请修正后重新生成
+
+## 行程方案审核反馈
+
+审核结论：**不通过**
+原因：{{ result.reasoning }}
+
+{% if result.issues %}
+### 发现的问题
+{% for issue in result.issues %}
+{% if issue.severity.value == 'critical' -%}
+- 🔴 [{{ issue.dimension }}] {{ issue.description }}
+{% elif issue.severity.value == 'major' -%}
+- 🟡 [{{ issue.dimension }}] {{ issue.description }}
+{% elif issue.severity.value == 'minor' -%}
+- 🟢 [{{ issue.dimension }}] {{ issue.description }}
+{% else -%}
+- ⚪ [{{ issue.dimension }}] {{ issue.description }}
+{% endif -%}
+{% endfor %}
+{% endif %}
+
+{% if result.suggestions %}
+### 改进建议
+{% for s in result.suggestions %}
+- {{ s }}
+{% endfor %}
+{% endif %}
+
+请根据以上反馈，重新生成行程方案。
+
+## 上一版方案（供参考修正）
+
+{{ plan_text }}

@@ -1,0 +1,38 @@
+# 任务信息
+
+**主题**: {{ topic }}
+**目标读者**: {{ audience }}
+**写作目标**: {{ goal }}
+{% if word_count %}
+**字数要求**: {{ word_count }}
+{% endif %}
+{% if tone %}
+**语气风格**: {{ tone }}
+{% endif %}
+
+{% if requirements %}
+## 必须包含
+
+{% for item in requirements %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+
+{% if constraints %}
+## 应该避免
+
+{% for item in constraints %}
+- {{ item }}
+{% endfor %}
+{% endif %}
+
+## 待审稿件
+
+```markdown
+{{ content }}
+```
+
+---
+
+请基于上述用户原始需求，对稿件进行全面审阅，并严格按照要求的 JSON 结构输出审稿意见。
+如果稿件本身没有问题、但用户需求不合理（如自相矛盾的要求），也需在审稿意见中指出。
